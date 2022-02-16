@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { ThemeProvider } from 'styled-components';
 import App from './App.tsx';
+import { lightTheme } from './theme';
 
 const darkTheme = {
   textColor: "whitesmoke",
@@ -14,7 +16,9 @@ const lightTteme = {
 
 ReactDOM.render(
   <React.StrictMode>
-    <App/>
+    <ThemeProvider theme={lightTteme}>
+      <App/>
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
